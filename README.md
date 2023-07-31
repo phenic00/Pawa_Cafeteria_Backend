@@ -27,6 +27,7 @@ This App allows staff to order a scrumptious meal
 ## BDD
 
 - Login as Staff or Admin
+- View the Tasty offerings by Category
 - Reset the password
 - Make an order
 - Make a Payment
