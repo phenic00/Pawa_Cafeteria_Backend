@@ -21,12 +21,13 @@ This App allows staff to order a scrumptious meal
 - HTML
 
 ## Complete Setup Instructions
-- Git clone https://github.com/vnjuguna/herosquadtrial.git
+- Git clone https://github.com/phenic00/Pawa_cafeteria_app
 - Open the cloned Code on Vs Code
 - Run with ...
 ## BDD
 
 - Login as Staff or Admin
+- View the Tasty offerings by Category
 - Reset the password
 - Make an order
 - Make a Payment
