@@ -3,6 +3,7 @@ package ke.co.safaricom;
 import spark.ModelAndView;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -13,9 +14,16 @@ public class Main {
         get("/", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "index.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/login", (request, response) -> {
-            return new ModelAndView(new HashMap<>(), "login.hbs");//add the functionality. add post for login.
-        }, new HandlebarsTemplateEngine());
+        get("/login",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            return new ModelAndView(payload,"login.hbs");
+
+        },new HandlebarsTemplateEngine());
+        post("/processlogin",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            System.out.println(request.body());
+            return new ModelAndView(payload,"main-dashboard.hbs");
+        },new HandlebarsTemplateEngine());
         get("/login-legit", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "login-legit.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
@@ -62,6 +70,19 @@ public class Main {
             return new ModelAndView(new HashMap<>(), "make-payments.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
 
+        get("/login",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            return new ModelAndView(payload,"login.hbs");
 
+        },new HandlebarsTemplateEngine());
+
+        post("/processlogin",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            System.out.println(request.body());
+            return new ModelAndView(payload,"success.hbs");
+        },new HandlebarsTemplateEngine());
     }
 }
+
+
+
