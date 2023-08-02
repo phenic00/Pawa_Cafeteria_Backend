@@ -1,5 +1,6 @@
 package ke.co.safaricom;
 
+import ke.co.safaricom.Dao.LoginDao;
 import spark.ModelAndView;
 
 import java.util.HashMap;
@@ -21,7 +22,10 @@ public class Main {
         },new HandlebarsTemplateEngine());
         post("/processlogin",(request, response) -> {
             Map<String, String> payload = new HashMap<>();
-            System.out.println(request.body());
+            String email = request.queryParams("email");
+String name=LoginDao.findLoginIdById(email).get(0).getName();
+payload.put( "name",name );
+           System.out.println(LoginDao.findLoginIdById(email).get(0));
             return new ModelAndView(payload,"main-dashboard.hbs");
         },new HandlebarsTemplateEngine());
         get("/login-legit", (request, response) -> {
@@ -45,6 +49,18 @@ public class Main {
         get("/main-dashboard", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "main-dashboard.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+
+        get("/main-dashboard",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            return new ModelAndView(payload,"main-dashboard.hbs");
+
+        },new HandlebarsTemplateEngine());
+        post("/main-dashboard",(request, response) -> {
+            Map<String, String> payload = new HashMap<>();
+            System.out.println(request.body());
+            return new ModelAndView(payload,"halaal.hbs");
+        },new HandlebarsTemplateEngine());
+
         get("/anonymous-dashboard", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "anonymous-dashboard.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
@@ -83,6 +99,4 @@ public class Main {
         },new HandlebarsTemplateEngine());
     }
 }
-
-
 
