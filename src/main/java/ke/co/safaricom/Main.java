@@ -66,6 +66,9 @@ public class Main {
         get("/vegetarian", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "vegetarian.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+        get("/food-description", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "food-description.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
         get("/view-order", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "view-orders.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
