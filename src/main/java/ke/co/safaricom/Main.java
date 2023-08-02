@@ -34,6 +34,9 @@ public class Main {
         get("/admin-dashboard", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "admin-dashboard.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+        get("/main-dashboard", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "main-dashboard.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
         get("/anonymous-dashboard", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "anonymous-dashboard.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
