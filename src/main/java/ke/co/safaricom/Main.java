@@ -69,6 +69,9 @@ public class Main {
         get("/make-payments", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "make-payments.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+        get("/view-order", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "view-orders.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
 
         get("/login",(request, response) -> {
             Map<String, String> payload = new HashMap<>();
