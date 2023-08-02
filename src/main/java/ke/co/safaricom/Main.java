@@ -66,12 +66,16 @@ public class Main {
         get("/vegetarian", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "vegetarian.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
-        get("/make-payments", (request, response) -> {
-            return new ModelAndView(new HashMap<>(), "make-payments.hbs");//add the functionality. add post for login.
-        }, new HandlebarsTemplateEngine());
         get("/view-order", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "view-orders.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+        get("/items-loaded", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "Items-loaded-on-cart.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
+        get("/make-payments", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "make-payments.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
+
 
         get("/login",(request, response) -> {
             Map<String, String> payload = new HashMap<>();
