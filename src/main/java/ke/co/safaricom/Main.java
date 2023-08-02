@@ -17,5 +17,10 @@ public class Main {
             return new ModelAndView( new HashMap<>(), "index.hbs");
         },new HandlebarsTemplateEngine());
 
+        get("/login",(request, response) ->{
+            return new ModelAndView( new HashMap<>(), "login.hbs");
+        },new HandlebarsTemplateEngine());
+
     }
+
 }
