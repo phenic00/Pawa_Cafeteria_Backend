@@ -36,8 +36,17 @@ public class Main {
         get("/reset-password", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "reset-password.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
+        get("/success-reset", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "success.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
+        get("/email-password-reset", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "email-password-reset.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
         get("/register", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "register.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
+        get("/succesful-registration", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "succesful-registration.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
         get("/admin-dashboard", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "admin-dashboard.hbs");//add the functionality. add post for login.
@@ -74,6 +83,9 @@ public class Main {
         }, new HandlebarsTemplateEngine());
         get("/make-payments", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "make-payments.hbs");//add the functionality. add post for login.
+        }, new HandlebarsTemplateEngine());
+        get("/payment-received", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "payment-received.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
 
 
