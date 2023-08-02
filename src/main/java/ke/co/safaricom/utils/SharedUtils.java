@@ -10,3 +10,4 @@ public class SharedUtils {
         return new HandlebarsTemplateEngine().render(new ModelAndView(model, templateName));
     }
 }
+
