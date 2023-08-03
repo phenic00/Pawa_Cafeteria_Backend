@@ -13,11 +13,11 @@ public class LoginDao {
 
     public static void create(Login login) {
         try (Connection connection = sql2o.open()) {
-            String query = "INSERT INTO users (name, email,password) VALUES (:name, :health, :age,:endangered);";
+            String query = "INSERT INTO users (name, email,password) VALUES (:name, :email :password,:typeofuser);";
             connection.createQuery( query )
                     .addParameter( "name", login.getName() )
                     .addParameter( "email", login.getEmail() )
-                    .addParameter( "id", login.getId() )
+                    .addParameter( "typeofuser", login.getTyperOfUser() )
                     .executeUpdate();
         } catch (Exception exception) {
             System.out.println( exception.getMessage() );
@@ -34,20 +34,6 @@ public class LoginDao {
             System.out.println(exception.getMessage());
             return null;
         }
-
-    }
-    public static List<LoginOption> getLoginOption() {
-        try (Connection connection = sql2o.open()) {
-            String query = "SELECT id,name as text from animals";
-            List<LoginOption> listOption = connection.createQuery( query )
-                    .executeAndFetch( LoginOption.class );
-            System.out.println( listOption );
-            return listOption;
-        } catch (Exception exception) {
-            System.out.println( exception.getMessage() );
-            return null;
-        }
-
 
     }
 
