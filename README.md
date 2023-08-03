@@ -72,9 +72,8 @@ CREATE TABLE "user" (
 );
 ## BDD
 
-- Login as Staff or Admin
+- Login
 - View the Tasty offerings by Category
-- Reset the password
 - Make an order
 - Make a Payment
 - Check status of the order
