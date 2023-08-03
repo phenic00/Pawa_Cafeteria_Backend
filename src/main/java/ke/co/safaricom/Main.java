@@ -95,8 +95,8 @@ payload.put( "name",name );
         get("/food-description", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "food-description.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
-        get("/view-order", (request, response) -> {
-            return new ModelAndView(new HashMap<>(), "view-orders.hbs");//add the functionality. add post for login.
+        get("/create-order", (request, response) -> {
+            return new ModelAndView(new HashMap<>(), "make-payment.hbs");//add the functionality. add post for login.
         }, new HandlebarsTemplateEngine());
         get("/items-loaded", (request, response) -> {
             return new ModelAndView(new HashMap<>(), "Items-loaded-on-cart.hbs");//add the functionality. add post for login.

@@ -38,7 +38,7 @@ public class LoginDao {
     }
     public static List<LoginOption> getLoginOption() {
         try (Connection connection = sql2o.open()) {
-            String query = "SELECT id,name as text from animals";
+            String query = "SELECT id,name as text from users";
             List<LoginOption> listOption = connection.createQuery( query )
                     .executeAndFetch( LoginOption.class );
             System.out.println( listOption );
